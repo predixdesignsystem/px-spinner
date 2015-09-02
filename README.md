@@ -27,7 +27,7 @@ SHOW the spinner by default when the page loads
 
 HIDE the spinner by default when the page loads
 ```
-<px-spinner></px-spinner>
+<px-spinner finished></px-spinner>
 ```
 
 ### Layouy
