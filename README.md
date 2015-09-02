@@ -3,51 +3,35 @@ Px-Spinner
 
 ## Overview
 
-Px-Spinner is a Predix Experience ('Px') component
+Px-Spinner is a Predix Experience ('Px') component used to indicate when data is being loaded, a view is changing, or any place a visual indication is needed to show that work is being done for an indefinite period of time.
 
-## Getting Started
+### Attributes
 
-Read https://github.sw.ge.com/pages/PX/technical-principles/
+**finished**
+A spinner that has 'finished', is hidden. Use this attribute to hide the spinner by default.
 
-From the component's directory...
+### Function Calls
 
+**show**
+What it says on the tin.
+
+**hide**
+What it says on the tin x2
+
+### Examples
+
+SHOW the spinner by default when the page loads
 ```
-$ npm install
-$ bower install
-$ grunt sass
+<px-spinner></px-spinner>
 ```
 
-### API and examples
-
-From the component's directory
-
+HIDE the spinner by default when the page loads
 ```
-$ grunt depserve
+<px-spinner></px-spinner>
 ```
 
-Starts a local server. Navigate to the root of that server (e.g. http://localhost:8080/) in a browser to open the API documentation page, with link to the "Demo" / working examples.
+### Layouy
 
-### Options
-
-Does this component have runtime configuration options?  If so, they should be able to be passed as attributes on the element with examples shown below.
-
-### Function calls
-
-What is the public API of this component?
-
-### Extending styles
-
-Documented CSS extension points?
-
-### Extending behavior
-
-See Polymer composition patterns
-
-GE Coding Style Guide
----------------------
-
-[GE JS Developer's Guide](https://github.com/GeneralElectric/javascript)
-
+The spinner centers itself vertically and horizontally within it's parent element.
 
 ### Known Issues
-
