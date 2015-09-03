@@ -10,6 +10,9 @@ Px-Spinner is a Predix Experience ('Px') component used to indicate when data is
 **finished**
 A spinner that has 'finished', is hidden. Use this attribute to hide the spinner by default.
 
+**size**
+The size, in pixels, of the spinner. Refers to both height and width, no units necessary.
+
 ### Function Calls
 
 **show**

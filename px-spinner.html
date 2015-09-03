@@ -9,34 +9,40 @@
 
 
 <!--
-Element providing solution to no problem in particular. As a simple, increments a counter when clicked.
+Px-Spinner is a Predix Experience ('Px') component used to indicate when data is being loaded, a view is changing, or any place a visual indication is needed to show that work is being done for an indefinite period of time.
+
 
 ##### Usage
 
-    <px-spinner counter-value="1">Hi</px-spinner>
+    <px-spinner size="50" finished></px-spinner>
 
 @element px-spinner
-@blurb Element providing solution to no problem in particular.
+@blurb Element providing an indication of data or a view loading.
 @homepage index.html
 @demo demo.html
 -->
 <dom-module id="px-spinner">
-    <link rel="import" type="css" href="css/px-spinner.css"/>
-    <template>
+  <link rel="import" type="css" href="css/px-spinner.css"/>
+  <template>
 
-      <div id="Wrapper">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" enable-background="new 0 0 55 55" xml:space="preserve">
-          <path id="Circle" fill="#D1D0D9" d="M27.5,55C12.3,55,0,42.7,0,27.5S12.3,0,27.5,0S55,12.3,55,27.5S42.7,55,27.5,55z M27.5,6.8 c-11.4,0-20.7,9.3-20.7,20.7s9.3,20.7,20.7,20.7s20.7-9.3,20.7-20.7S38.9,6.8,27.5,6.8z"/>
-          <path id="Progress" fill="#5082C3" d="M27.5,55C12.3,55,0,42.7,0,27.5h6.8c0,11.4,9.3,20.7,20.7,20.7V55z">
-            <animateTransform attributeName="transform"
+    <div id="Wrapper">
+      <svg version="1.1"
+          id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" height$="{{size}}" width$="{{size}}"
+          viewBox="0 0 55 55"
+          enable-background="new 0 0 55 55"
+          xml:space="preserve">
+        <path id="Circle" fill="#D1D0D9" d="M27.5,55C12.3,55,0,42.7,0,27.5S12.3,0,27.5,0S55,12.3,55,27.5S42.7,55,27.5,55z M27.5,6.8 c-11.4,0-20.7,9.3-20.7,20.7s9.3,20.7,20.7,20.7s20.7-9.3,20.7-20.7S38.9,6.8,27.5,6.8z"/>
+        <path id="Progress" fill="#5082C3" d="M27.5,55C12.3,55,0,42.7,0,27.5h6.8c0,11.4,9.3,20.7,20.7,20.7V55z">
+          <animateTransform attributeName="transform"
                             attributeType="XML"
                             type="rotate"
                             from="0 27.5 27.5"
                             to="360 27.5 27.5"
                             dur="1s"
                             repeatCount="indefinite"/>
-          </path>
-        </svg>
+        </path>
+      </svg>
     </div>
 
     </template>
@@ -57,8 +63,12 @@ Element providing solution to no problem in particular. As a simple, increments 
                 type: Boolean,
                 value: false,
                 reflect: true,
-                notify: true,
                 observer: '_finishedChanged'
+            },
+            size: {
+              type: Number,
+              value: 40,
+              notify: true
             }
         },
 

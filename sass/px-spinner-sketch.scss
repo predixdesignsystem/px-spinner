@@ -45,13 +45,10 @@ $inuit-enable-layout--full : true;
 }
 
 svg {
-  height: 20px;
-  width: 20px;
   position: relative;
   top: 50%;
-  margin-top: -10px;
+  transform: translateY(-50%);
 }
-
 
 #Progress {
   position: absolute;
