@@ -1,0 +1,91 @@
+/*
+ * Copyright (c) 2014 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+
+//
+// Sass for the "sketch" notion of the px-spinner component
+//
+// @author Runn Vermel
+//
+
+/*
+THIS FILE SHOULD CONTAIN ONLY ABSTRACT/'SKETCH' THEME RULES, NOT SPECIFIC TO PREDIX BRANDING
+Predix branding rules go in px-spinner-predix.scss, not in this file.
+*/
+
+
+
+// Generic
+@import "px-normalize-design/_generic.normalize.scss";
+@import "px-box-sizing-design/_generic.box-sizing.scss";
+@import "px-helpers-design/_generic.helpers.scss";
+
+// Base
+@import "px-flexbox-design/_base.flexbox.scss";
+@import "px-viewport-design/_base.viewport.scss";
+
+$inuit-enable-layout--full : true;
+
+@import "px-layout-design/_objects.layout.scss";
+
+// Component
+
+
+.loader {
+  vertical-align: middle;
+  margin: 0 auto;
+  text-indent: -9999em;
+  width: 13.33rem;
+  height: 13.33rem;
+  border-radius: 50%;
+  background: #d1d0d9;
+  position: relative;
+  animation: spin 1s infinite linear;
+  transform: translateZ(0);
+
+  	&:before {
+	  width: 50%;
+	  height: 50%;
+	  background: #5082c3;
+	  border-radius: 100% 0 0 0;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  content: '';
+	}
+
+	&:after {
+	  background: #fafafa;
+	  width: 75%;
+	  height: 75%;
+	  border-radius: 50%;
+	  content: '';
+	  margin: auto;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  right: 0;
+	}
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+
+// Trumps
+@import "inuit-clearfix/_trumps.clearfix.scss";
+@import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
+@import "px-widths-responsive-design/_trumps.widths-responsive.scss";

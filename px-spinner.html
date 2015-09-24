@@ -1,0 +1,83 @@
+
+<!--
+    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
+    siblings. When this component is run from its own repo (e.g. ui tests, examples), we assume the server is started with
+    'grunt depserve' (or similar server setup) to enable correct finding of bower dependencies for local runs
+    See https://github.com/jreichenberg/grunt-dep-serve#why-do-we-need-this
+-->
+<link rel="import" href="../polymer/polymer.html"/>
+
+
+<!--
+Px-Spinner is a Predix Experience ('Px') component used to indicate when data is being loaded, a view is changing, or any place a visual indication is needed to show that work is being done for an indefinite period of time.
+
+
+##### Usage
+
+    <px-spinner size="50" finished></px-spinner>
+
+@element px-spinner
+@blurb Element providing an indication of data or a view loading.
+@homepage index.html
+@demo demo.html
+-->
+<dom-module id="px-spinner">
+  <link rel="import" type="css" href="css/px-spinner.css"/>
+  <template>
+    <div id="Wrapper" class="loader "></div>
+  </template>
+</dom-module>
+
+<script>
+    Polymer({
+        ready: function() {
+          this.$.Wrapper.style.width = this.size + 'px';
+          this.$.Wrapper.style.height = this.size + 'px';
+        },
+        is: 'px-spinner',
+
+        /**
+         * Properties block, expose attribute values to the DOM via 'reflect'
+         *
+         * @property properties
+         * @type Object
+         */
+        properties: {
+            finished: {
+                type: Boolean,
+                value: false,
+                reflect: true,
+                observer: '_finishedChanged'
+            },
+            size: {
+              type: Number,
+              value: 80,
+              notify: true
+            }
+        },
+
+        _finishedChanged: function(newValue, oldValue) {
+          //console.log(this.finished);
+          (this.finished) ? this.hide() : this.show();
+        },
+
+        /**
+         * Shows the spinner
+         *
+         * @method show
+         */
+        show: function() {
+          this.$.Wrapper.style.display = 'block';
+        },
+
+        /**
+         * Hides the spinner
+         *
+         * @method hide
+         */
+        hide: function () {
+          this.$.Wrapper.style.display = 'none';
+        }
+
+    });
+</script>

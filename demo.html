@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>px-spinner Demo</title>
+  <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+  <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+  <link rel="imprt" href="bower_components/polymer/polymer.html"/>
+  <link rel="import" href="px-spinner.html"/>
+  <link rel="import" href="px-spinner-demo.html"/>
+  <link rel="import" href="../px-theme/px-theme.html"/>
+</head>
+
+<body>
+  <style>
+    .demo {
+      text-align:center;
+      margin-top:70px;
+    }
+  </style>
+  <h3>Demo</h3>
+
+  </p>
+  <p class="demo">Default</p>
+    <px-spinner></px-spinner>
+
+  <p class="demo">Bigger</p>
+    <px-spinner size="150"></px-spinner>
+
+  <p class="demo">Hide by default</p>
+    <px-spinner finished></px-spinner>
+
+  <p class="demo">Show/Hide Programatically</p>
+    <px-spinner-demo></px-spinner-demo>
+
+</body>
+</html>
