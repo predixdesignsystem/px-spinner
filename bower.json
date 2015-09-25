@@ -1,6 +1,6 @@
 {
   "name": "px-spinner",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": [
     "px-spinner.html"
   ],
@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "polymer": "~1.0.0",
-    "px-theme": "https://github.com/PredixDev/px-theme.git#~0.2.0",
+    "px-theme": "https://github.com/PredixDev/px-theme.git#~0.3.14",
     "px-layout-design": "https://github.com/PredixDev/px-layout-design.git#~0.3.7"
   },
   "devDependencies": {
