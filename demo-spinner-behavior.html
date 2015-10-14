@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>demo spinner behavior</title>
+  <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+  <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+  <link rel="import" href="../polymer/polymer.html"/>
+  <link rel="import" href="sample-default-spinner.html"/>
+
+  <style>
+    .wrapper, html, body {
+	height: 100%;
+        margin: 0;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #row1 {
+       background-color: red;
+    }
+
+    #row2 {
+        background-color: blue;
+    }
+
+    #row3 {
+        background-color: green;
+        flex: 2;
+        display: flex;
+	flex-wrap: nowrap;
+    }
+
+    #col1 {
+          background-color: yellow;
+          flex: 0 0 240px;
+    }
+
+    #col2 {
+          background-color: orange;
+          flex: 1 1;
+    }
+
+    #col3 {
+          background-color: purple;
+          flex: 0 0 240px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <sample-default-spinner></sample-default-spinner>
+    <div id="row1">
+      this is the first row
+    </div>
+    <div id="row2">
+      this is the second row
+    </div>
+    <div id="row3">
+      <div id="col1">
+        col1
+      </div>
+      <div id="col2">
+        col2
+      </div>
+      <div id="col3">
+        col3
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+	setTimeout(function() {
+	    APP.DefaultSpinner.showSpinner();
+	}, 1000);
+	setTimeout(function() {
+	    APP.DefaultSpinner.hideSpinner();
+	}, 5000);
+    });
+  </script>
+</body>
+
+</html>

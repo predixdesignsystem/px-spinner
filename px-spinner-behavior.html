@@ -1,0 +1,186 @@
+
+<script>
+	/**
+	 * `SpinnerBehavior` is a behavior that can be used in conjunction with the
+	 * Polymer component px-spinner to provide the user with visible feedback
+	 * about the busy state of the application.  SpinnerBehavior encapsulates the following
+	 * pattern:
+	 * - The markup of px-spinner component is contained in another Polymer component, which is
+	 *   referred to as the "owner" of the spinner.
+	 * - The px-spinner component also acts as a mask over the area where user input is blocked, and
+	 *   it is sized accordingly to achieve this.
+	 * - The px-spinner is centered over the masked area.
+	 * - The owner registers its px-spinner instance with a unique spinner name.  An unnamed spinner
+	 *   is considered the default spinner.  There can only be one default spinner.
+	 * - Once a spinner is registered, it can be referenced by its name in order to show/hide it.
+	 * - This pattern supports the use case of multiple spinners as well as regional spinners.
+	 *   All common behaviors such as waiting a certain period before showing the spinner should be
+	 *   encapsulated here.
+	 *
+	 * Normal steps to use SpinnerBehavior as :
+	 * - Link and declare the behavior:
+	 *      <link rel="import" href="../../../behaviors/px-spinner-behavior.html"/>
+	 * 		behaviors: [px.SpinnerBehavior]
+	 * - Owner registers the px-spinner instance:
+	 * 		this.registerSpinner();
+	 * - Show the spinner from anywhere:
+	 * 		this.showSpinner();		// show default spinner
+	 * 		this.showSpinner('Chart-Spinner');
+	 * - Hide the spinner from anywhere
+	 * 		this.hideSpinner();		// hide default spinner
+	 * 		this.hideSpinner('Chart-Spinner');
+	 *
+	 * @demo demo-spinner-behavior.html
+	 *
+	 **/
+
+	// namespace for px globally accessible things
+	window.px = window.px || {};
+
+	px.SpinnerBehavior = {
+		properties: {
+			_spinnerRegistry: {
+				type: Object,
+				value: {}
+			}
+		},
+
+		listeners: {
+			'request-spinner-notifications': '_onRequestSpinnerNotifications',
+		},
+
+		_onRequestSpinnerNotifications: function(event) {
+			console.log('spinner-behavior._onRequestSpinnerNotifications: ' + this.is + ': entered')
+			var target = event.path ? event.path[0] : event.target;
+
+			if (target === this) {
+				return;
+			}
+
+			if (this._interestedDescendents.indexOf(target) === -1) {
+				this._interestedDescendents.push(target);
+				this._interestedDescendents.forEach(function(item) {
+					console.log('     _interestedDescendents=' + item.id);
+				});
+			}
+		},
+
+		created: function() {
+			console.log('spinner-behavior.created: ' + this.is);
+			this._ownedSpinners = {};
+			this._interestedDescendents = [];	// potential maskable descendants
+		},
+
+		attached: function() {
+			console.log('spinner-behavior.attached: ' + this.is);
+			this.fire('request-spinner-notifications', null, {
+				node: this, bubbles: true, cancelable: true
+			});
+		},
+
+		detached: function() {
+			console.log('spinner-behavior.detached: ' + this.is);
+			// un-register owned spinners
+			for (var prop in this._ownedSpinners) {
+				if (this._ownedSpinners.hasOwnProperty(prop)) {
+					delete this._spinnerRegistry[prop];
+					delete this._ownedSpinners[prop];
+					console.log('spinner-behavior.detach: ' + this.is + ': un-registered spinner ' + prop);
+				}
+			}
+		},
+
+		_checkSpinnerName: function(spinnerName) {
+			if (!spinnerName) {
+				return '__DEFAULT__';
+			}
+			return spinnerName;
+		},
+
+		registerSpinner: function(spinnerName) {
+			// owner must contain a px-spinner component
+			var spinner = this.querySelector('px-spinner');
+			if (!spinner) {
+				throw new Error('Cannot find the px-spinner instance');
+			}
+
+			// check for spinner name collision
+			var existing = this._getSpinner(spinnerName, false);
+			if (existing) {
+				throw new Error('Spinner with the same name has already been registered: ' + spinnerName);
+			}
+
+			spinnerName = this._checkSpinnerName(spinnerName);
+			this._ownedSpinners[spinnerName] = spinner;	// keep track for later clean up
+			this._spinnerRegistry[spinnerName] = { spinner: spinner, owner: this };
+			console.log('spinner-behavior.registerSpinner: ' + this.is + ': ' + spinnerName);
+
+			// XXX workaround: initially state of px-spinner is visible - should be hidden
+			this.hideSpinner(spinnerName);
+		},
+
+		_getSpinner: function(spinnerName, ensureExist) {
+			if (!spinnerName) {
+				spinnerName = '__DEFAULT__';
+			}
+
+			if (ensureExist && !this._spinnerRegistry[spinnerName]) {
+				if (spinnerName == '__DEFAULT__') {
+					throw new Error('No default spinner has been registered');
+				}
+				else {
+					throw new Error('No registered spinner with name ' + spinnerName);
+				}
+			}
+			return (this._spinnerRegistry[spinnerName]) ? this._spinnerRegistry[spinnerName].spinner : null;
+		},
+
+		showSpinner: function(spinnerName) {
+			console.log('spinner-behavior.showSpinner: ' + this.is + ' ----------------');
+			// TODO: only show spinner for a delay (like 500ms)
+			var spinner = this._getSpinner(spinnerName);
+			spinner.show();
+
+			// XXX workaround px-spinner bug - px-spinner only hides the mask not the entire component
+			spinner.style.visibility = 'visible';
+
+			this._notifySpinnerStart(spinnerName);
+		},
+
+		hideSpinner: function(spinnerName) {
+			console.log('spinner-behavior.hideSpinner: ' + this.is + ' ----------------');
+			var spinner = this._getSpinner(spinnerName);
+			spinner.hide();
+
+			// XXX workaround px-spinner bug - px-spinner only hides the mask not the entire component
+			spinner.style.visibility = 'hidden';
+
+			this._notifySpinnerStop(spinnerName);
+		},
+
+		_notifySpinnerStart: function(spinnerName) {
+			this._notifySpinnerEvent(spinnerName, 'spinner-start');
+		},
+
+		_notifySpinnerStop: function(spinnerName) {
+			this._notifySpinnerEvent(spinnerName, 'spinner-stop');
+		},
+
+		_notifySpinnerEvent: function(spinnerName, eventType) {
+			if (!this.isAttached) {
+				return;
+			}
+
+			spinnerName = this._checkSpinnerName(spinnerName);
+			var owner = this._spinnerRegistry[spinnerName].owner;
+			owner.fire(eventType, { spinnerName: spinnerName }, { node: this, bubbles: false });
+
+			// find the owner of the spinner and notify its descendents
+			console.log('spinner-behavior.notifySpinnerEvent: event=' + eventType + ' num descendents = ' + owner._interestedDescendents.length);
+			owner._interestedDescendents.forEach(function(observer) {
+				console.log('    spinner-behavior.notifySpinnerEvent: event=' + eventType + ' notifying descendent=' + observer.is);
+				observer.fire( eventType, { spinnerName: spinnerName }, { node: observer, bubbles: false } );
+			});
+		}
+	}
+</script>
