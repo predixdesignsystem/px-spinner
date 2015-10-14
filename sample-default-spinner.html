@@ -1,0 +1,62 @@
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="px-spinner.html"/>
+<link rel="import" href="px-spinner-behavior.html"/>
+
+<dom-module id="sample-default-spinner">
+        <style>
+	    px-spinner {
+	      display: flex;
+	      align-items: center;
+	      position: absolute;
+	      top: 0;
+	      bottom: 0;
+	      padding-left: 49%;
+	      padding-right: 49%;
+	      z-index: 999; 
+	    }
+        </style>
+	<template>
+	    <px-spinner></px-spinner>
+	</template>
+</dom-module>
+<script>
+	window.APP = window.APP || {};
+
+	APP.EmptyDefaultSpinner = {
+		showSpinner: function() {
+			console.log('Ignored showSpinner() call since default spinner has not been initialized');
+		},
+		hideSpinner: function() {
+			console.log('Ignored hideSpinner() call since default spinner has not been initialized');
+		}
+	};
+
+	APP.DefaultSpinner = APP.EmptyDefaultSpinner;
+
+	Polymer({
+		is: 'sample-default-spinner',
+
+		properties: {
+			// none for now
+		},
+
+		behaviors: [px.SpinnerBehavior],
+
+		created: function() {
+			console.log('sample-default-spinner.created: ');
+		},
+
+		attached: function() {
+			// register the px-spinner contained in this component as the unnamed spinner (default spinner)
+			this.registerSpinner();
+
+			// make this behavior globally accessible by non-polymer code
+			APP.DefaultSpinner = this;
+		},
+
+		detached: function() {
+			APP.DefaultSpinner = APP.EmptyDefaultSpinner;
+		}
+	});
+</script>
+

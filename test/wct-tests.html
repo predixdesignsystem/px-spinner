@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <!-- Step 1: import the element to test -->
+  <link rel="import" href="../px-spinner.html"/>
+
+  <title>Test px-spinner Layout</title>
+
+</head>
+
+<body>
+  <style>
+    .default-spinner-flex-container {
+      width: 200px;
+      height: 200px;
+      border: solid red 1px;
+      display: flex;
+      align-items: center;
+    }
+    .default-spinner-box-container {
+      width: 200px;
+      height: 200px;
+      border: solid green 1px;
+    }
+    px-spinner {
+      border: solid orange 1px;
+      flex: 1;
+      align-content: center;
+      justify-content: center;
+    }
+    #stand-alone-spinner {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      padding-left: 49%;
+      padding-right: 49%;
+      z-index: 999;
+      border: solid purple 3px;
+    }
+
+  </style>
+
+  <!-- You use the document as a place to set up your fixtures. -->
+  <p class="demo">No wrapper - use Spinner as mask</p>
+  <px-spinner id="stand-alone-spinner"></px-spinner>
+
+  <p class="demo">Flex Container</p>
+  <div class="default-spinner-flex-container">
+    <px-spinner></px-spinner>
+  </div>
+
+  <p class="demo">Box Container</p>
+  <div class="default-spinner-box-container">
+    <px-spinner></px-spinner>
+  </div>
+  <script>
+  suite('<px-spinner>', function() {
+    test('is px-spinner', function() {
+      // TODO: assert the spinner is centered correctly in both the box layout and flex layout
+    });
+  });
+
+  </script>
+</body>
+</html>
