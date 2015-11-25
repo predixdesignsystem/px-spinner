@@ -183,9 +183,7 @@ html {
   /*! Comment to prevent cssmin munging this rule with html above and borking Safari */
   box-sizing: border-box; }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   box-sizing: inherit; }
 
 /**
@@ -248,15 +246,13 @@ a {
   /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */ }
-  a:link,
-  a:visited {
+  a:link, a:visited {
     color: #3e87e8; }
   a:hover {
     color: #3573c5; }
   a:active {
     color: #2b5ea2; }
-  a:active,
-  a:hover {
+  a:active, a:hover {
     outline: 0; }
 
 /**
@@ -339,9 +335,9 @@ a {
   padding: 0 !important;
   clip: rect(0 0 0 0) !important; }
 
-.a11y.focusable:active,
-.a11y.focusable:focus,
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+.a11y.focusable:active, .a11y.focusable:focus,
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
   position: static;
   overflow: visible;
   width: auto;
@@ -657,56 +653,41 @@ a {
   display: -ms-flexbox;
   display: flex; }
 
-.loader {
-  vertical-align: middle;
-  margin: 0 auto;
-  text-indent: -9999em;
-  width: 13.33rem;
-  height: 13.33rem;
-  border-radius: 50%;
-  background: #d1d0d9;
+.spinner {
+  margin: 60px auto;
+  font-size: 10px;
   position: relative;
-  -webkit-animation: spin 1s infinite linear;
-          animation: spin 1s infinite linear;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(209, 208, 217, 0.2);
+  border-right: 1.1em solid rgba(209, 208, 217, 0.2);
+  border-bottom: 1.1em solid rgba(209, 208, 217, 0.2);
+  border-left: 1.1em solid #5082c3;
   -webkit-transform: translateZ(0);
-          transform: translateZ(0); }
-  .loader:before {
-    width: 50%;
-    height: 50%;
-    background: #5082c3;
-    border-radius: 100% 0 0 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: ''; }
-  .loader:after {
-    background: #fafafa;
-    width: 75%;
-    height: 75%;
-    border-radius: 50%;
-    content: '';
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0; }
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear; }
 
-@-webkit-keyframes spin {
+.spinner,
+.spinner:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em; }
+
+@-webkit-keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg); } }
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
-@keyframes spin {
+@keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg); } }
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 /*------------------------------------*    #CLEARFIX
 \*------------------------------------*/

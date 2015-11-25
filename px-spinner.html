@@ -24,7 +24,7 @@ Px-Spinner is a Predix Experience ('Px') component used to indicate when data is
 <dom-module id="px-spinner">
   <link rel="import" type="css" href="css/px-spinner.css"/>
   <template>
-    <div id="Wrapper" class="loader "></div>
+    <div id="Wrapper" class="spinner"></div>
   </template>
 </dom-module>
 
@@ -46,7 +46,7 @@ Px-Spinner is a Predix Experience ('Px') component used to indicate when data is
             finished: {
                 type: Boolean,
                 value: false,
-                reflect: true,
+                reflectToAttribute: true,
                 observer: '_finishedChanged'
             },
             size: {
