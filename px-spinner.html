@@ -9,8 +9,9 @@
 
 
 <!--
-Px-Spinner is a Predix Experience ('Px') component used to indicate when data is being loaded, a view is changing, or any place a visual indication is needed to show that work is being done for an indefinite period of time.
-
+Px-Spinner is a Predix UI component used to indicate when data is being loaded,
+a view is changing, or any place a visual indication is needed to show that work
+is being done for an indefinite period of time.
 
 ##### Usage
 
@@ -43,21 +44,36 @@ Px-Spinner is a Predix Experience ('Px') component used to indicate when data is
          * @type Object
          */
         properties: {
+          /**
+           *
+           * This attribute hides the spinner
+           *
+           */
             finished: {
                 type: Boolean,
                 value: false,
                 reflectToAttribute: true,
                 observer: '_finishedChanged'
             },
+            /**
+             *
+             * The size, in pixels, of the spinner.
+             * Refers to the inner dimension of the circle - no units necessary.
+             *
+             */
             size: {
               type: Number,
               value: 80,
               notify: true
             }
         },
-
+        /**
+         *
+         * This method checks whether the finished attribute is true,
+         * and if it is, hides the element. if it's false, it shows it
+         *
+         */
         _finishedChanged: function(newValue, oldValue) {
-          //console.log(this.finished);
           (this.finished) ? this.hide() : this.show();
         },
 
