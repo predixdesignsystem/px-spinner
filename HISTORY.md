@@ -1,3 +1,7 @@
+v0.2.1
+================
+* Merge Pull request for devmode
+
 v0.2.0
 =================
 * Upgrade to Polymer 1.4.0
