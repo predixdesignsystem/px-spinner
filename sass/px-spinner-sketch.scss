@@ -36,9 +36,11 @@ $inuit-enable-layout--full : true;
 
 // Component
 
+:host {
+  display: block;
+}
 
 .spinner {
-  margin: 60px auto;
   font-size: 10px;
   position: relative;
   text-indent: -9999em;

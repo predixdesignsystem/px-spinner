@@ -34,6 +34,10 @@ is being done for an indefinite period of time.
         ready: function() {
           this.$.Wrapper.style.width = this.size + 'px';
           this.$.Wrapper.style.height = this.size + 'px';
+
+          // Styling the px-spinner elem so it can be positioned properly
+          this.style.width = this.size + 'px';
+          this.style.height = this.size + 'px';
         },
         is: 'px-spinner',
 
@@ -83,7 +87,8 @@ is being done for an indefinite period of time.
          * @method show
          */
         show: function() {
-          this.$.Wrapper.style.display = 'block';
+          // Setting display to '' instead of 'block' allows user defined css to still work
+          this.style.display = '';
         },
 
         /**
@@ -92,7 +97,7 @@ is being done for an indefinite period of time.
          * @method hide
          */
         hide: function () {
-          this.$.Wrapper.style.display = 'none';
+          this.style.display = 'none';
         }
 
     });
