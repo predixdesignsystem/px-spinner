@@ -1,3 +1,7 @@
+v0.2.2
+================
+* Merge Pull request for margin
+
 v0.2.1
 ================
 * Merge Pull request for devmode
