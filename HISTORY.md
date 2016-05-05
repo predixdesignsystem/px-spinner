@@ -1,3 +1,7 @@
+v0.2.3
+================
+* added auto github pages functionality
+
 v0.2.2
 ================
 * Merge Pull request for margin
