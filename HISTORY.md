@@ -1,3 +1,7 @@
+v0.2.4
+================
+* added pull request test for travis and updated OSS Notice
+
 v0.2.3
 ================
 * added auto github pages functionality
