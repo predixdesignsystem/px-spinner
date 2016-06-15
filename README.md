@@ -1,4 +1,4 @@
-Px-Spinner
+Px-Spinner [![Build Status](https://travis-ci.org/PredixDev/px-spinner.svg?branch=master)](https://travis-ci.org/PredixDev/px-spinner)
 -----------------------------------------------
 
 ## Overview
