@@ -1,7 +1,10 @@
+v0.3.2
+================
+* updated favicon
+
 v0.3.1
 ================
 * added new demo page and made the size dynamic
-=======
 
 v0.3.0
 ================
