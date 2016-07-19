@@ -1,5 +1,9 @@
 v0.3.2
 ================
+* removed px-clipboard from bower
+
+v0.3.2
+================
 * updated favicon
 
 v0.3.1
