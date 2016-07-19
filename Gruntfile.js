@@ -24,7 +24,8 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     'css/noprefix/px-spinner-sketch.css': 'sass/px-spinner-sketch.scss',
-                    'css/noprefix/px-spinner.css': 'sass/px-spinner-predix.scss'
+                    'css/noprefix/px-spinner.css': 'sass/px-spinner-predix.scss',
+                    'css/noprefix/px-spinner-demo.css': 'sass/px-spinner-demo.scss'
                 }
             }
         },

@@ -31,14 +31,6 @@ is being done for an indefinite period of time.
 
 <script>
     Polymer({
-        ready: function() {
-          this.$.Wrapper.style.width = this.size + 'px';
-          this.$.Wrapper.style.height = this.size + 'px';
-
-          // Styling the px-spinner elem so it can be positioned properly
-          this.style.width = this.size + 'px';
-          this.style.height = this.size + 'px';
-        },
         is: 'px-spinner',
 
         /**
@@ -68,8 +60,26 @@ is being done for an indefinite period of time.
             size: {
               type: Number,
               value: 80,
-              notify: true
+              notify: true,
+              observer: '_sizeComponent'
             }
+        },
+        attached: function() {
+          this._sizeComponent();
+        },
+        /**
+         *
+         * sets the size of the component.
+         *
+         *@method _sizeComponent
+         */
+        _sizeComponent: function() {
+          this.$.Wrapper.style.width = this.size + 'px';
+          this.$.Wrapper.style.height = this.size + 'px';
+
+          // Styling the px-spinner elem so it can be positioned properly
+          this.style.width = this.size + 'px';
+          this.style.height = this.size + 'px';
         },
         /**
          *
