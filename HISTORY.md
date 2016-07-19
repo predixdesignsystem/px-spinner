@@ -1,6 +1,11 @@
-v0.2.6
+v0.3.1
 ================
 * added new demo page and made the size dynamic
+=======
+
+v0.3.0
+================
+* Upgrade to Polymer 1.5.0
 
 v0.2.5
 ================
