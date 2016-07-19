@@ -1,6 +1,6 @@
 {
   "name": "px-spinner",
-  "version": "0.2.5",
+  "version": "0.2.6",
 
   "main": [
     "px-spinner.html"
@@ -21,7 +21,6 @@
     "px-layout-design": "https://github.com/PredixDev/px-layout-design.git#~0.3.7"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#~v1.1.0",
     "px-starter-kit-design": "https://github.com/PredixDev/px-starter-kit-design.git#~0.4.0",
     "px-forms-design": "#~0.3.15",
     "px-tables-design": "#~0.3.12",

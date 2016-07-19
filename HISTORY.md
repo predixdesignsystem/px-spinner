@@ -1,3 +1,7 @@
+v0.2.6
+================
+* added new demo page and made the size dynamic
+
 v0.2.5
 ================
 * added oss_notice to bower ignore
