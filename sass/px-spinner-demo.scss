@@ -110,6 +110,10 @@ $inuit-enable-input--regular : true;
   margin-top:calculateRem(35px);
   background: $gray1;
 }
+.apiContainer {
+  background-color: $white;
+  margin: 0 auto;
+}
 @media screen  and (max-width: calculateRem(672px)){
   .mega-demo {
     flex-direction: column;

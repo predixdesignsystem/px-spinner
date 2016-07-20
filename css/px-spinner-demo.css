@@ -947,6 +947,10 @@ textarea {
   margin-top: 2.3333333333rem;
   background: #f7f7fc; }
 
+.apiContainer {
+  background-color: white;
+  margin: 0 auto; }
+
 @media screen and (max-width: 44.8rem) {
   .mega-demo {
     -ms-flex-direction: column;

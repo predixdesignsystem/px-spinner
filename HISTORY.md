@@ -1,3 +1,7 @@
+v0.3.4
+================
+* added a class to the demo page
+
 v0.3.3
 ================
 * removed px-clipboard from bower
