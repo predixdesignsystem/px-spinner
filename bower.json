@@ -1,6 +1,6 @@
 {
   "name": "px-spinner",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "main": [
     "px-spinner.html"
   ],
@@ -28,6 +28,10 @@
     "px-tabs": "~0.4.0",
     "ace-widget": "LostInBrittany/ace-widget#~1.0.13",
     "px-api-viewer": "https://github.com/PredixDev/px-api-viewer.git",
-    "px-demo-snippet": "https://github.com/predixdev/px-demo-snippet.git"
+    "px-demo-snippet": "https://github.com/predixdev/px-demo-snippet.git",
+    "px-toggle-design": "^0.2.12",
+    "px-actionable-text-icons-design": "^0.0.3",
+    "px-headings-design": "^0.2.13",
+    "px-code-design": "~0.2.11"
   }
 }
