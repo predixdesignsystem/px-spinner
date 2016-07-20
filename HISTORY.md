@@ -1,3 +1,7 @@
+v0.3.6
+================
+* added onerror checked for shield images
+
 v0.3.5
 ================
 * updated css for demo page
