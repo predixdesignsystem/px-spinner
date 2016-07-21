@@ -35,8 +35,6 @@ $predixBlue: #2886af;
 $inuit-enable-code--inline : true;
 @import "px-code-design/_base.code.scss";
 
-
-
 // Objects
 $actionable : true;
 @import "px-actionable-text-icons-design/_objects.actionable.scss";
@@ -48,14 +46,17 @@ $inuit-enable-inline-fields : true;
 $inuit-enable-input--regular : true;
 @import "px-forms-design/_base.forms.scss";
 
+$inuit-enable-list-inline--delimited : true;
+@import "px-list-inline-design/_objects.list-inline.scss";
+
 // Component
 .mega-demo{
   background: $gray1;
   width: 100%;
 }
 
-.description-text{
-  max-width: calculateRem(700px);
+.hero{
+  max-width: calculateRem(725px);
 }
 
 .properties{
@@ -104,22 +105,62 @@ $inuit-enable-input--regular : true;
   margin:0 auto;
   max-width:calculateRem(1200px);
 }
+.apiContainer {
+  margin: 0 auto;
+  background-color: $white;
+}
 .tabContainer {
   flex:0 0 100%;
   height:calculateRem(60px);
   margin-top:calculateRem(35px);
   background: $gray1;
 }
-.apiContainer {
-  background-color: $white;
-  margin: 0 auto;
+
+.footer{
+  background-color: $gray7;
 }
+.footer__container{
+  flex-basis: 90%;
+  color: $gray4;
+  font-size: 12px;
+  //flex
+  align-items: center;
+  display: inline-flex;
+  justify-content: space-between;
+}
+.footer__list--lnk{
+  color: $gray4;
+  text-decoration: none;
+  &:link,
+  &:visited,
+  &:active,
+  &:focus {
+    color: $gray4;
+  }
+  &:hover{
+    color: $gray2;
+  }
+  &:active {
+    color: $grey4;
+  }
+}
+.footer__img{
+  width: 150px;
+}
+
 @media screen  and (max-width: calculateRem(672px)){
   .mega-demo {
     flex-direction: column;
   }
   .demoContainer {
     margin-left: calculateRem(30px);
+  }
+  .footer__container{
+    flex-direction: column;
+  }
+  .footer__list{
+    padding-top: $inuit-base-spacing-unit--small;
+    text-align: center;
   }
 }
 // Trumps

@@ -8,7 +8,6 @@
   <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
   <script src="../webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="../px-theme/px-theme.html"/>
-  <link rel="import" href="../iron-ajax/iron-ajax.html"/>
   <link rel="import" href="../px-api-viewer/px-api-viewer.html" />
   <link rel="import" href="../px-tabs/px-tab-set.html" />
   <link rel="import" href="px-spinner.html"/>
@@ -95,12 +94,32 @@
       </template>
     </px-tab-pages>
   </div>
+  <footer class="footer flex flex--center">
+    <div class="footer__container u-pv++">
+      <div>
+        <a href="https://ge.com/digital" >
+          <img src="monogram-wdmk.png" alt="GE Monogram" class="footer__img">
+        </a>
+      </div>
+      <div class="footer__list">
+        <ul class="list-inline list-inline--delimited">
+          <li>
+            <a href="http://predix.io/legal" class="footer__list--lnk">Legal</a>
+          </li>
+          <li>
+            <a href="mailto:info@predix.io" class="footer__list--lnk">Contact Us</a>
+          </li>
+          <li>Copyright &copy; {{year}} General Electric Company. All rights reserved.</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </template>
 <script>
 window.addEventListener('WebComponentsReady', function() {
-  var template = document.querySelector('template[is=dom-bind]');
-
-  var optionsArray = [
+  var template = document.querySelector('template[is=dom-bind]'),
+      year = new Date(),
+      optionsArray = [
     {
       "size":150,
       "finished": false
@@ -115,9 +134,12 @@ window.addEventListener('WebComponentsReady', function() {
       return num + 1;
     };
 
+    year = year.getFullYear();
+
     template.selected = "0";
     template.optionsArray = optionsArray;
     template.indexPlusOne = indexPlusOne;
+    template.year = year;
 });
 </script>
 

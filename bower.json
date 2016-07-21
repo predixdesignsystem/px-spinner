@@ -32,6 +32,8 @@
     "px-toggle-design": "^0.2.12",
     "px-actionable-text-icons-design": "^0.0.3",
     "px-headings-design": "^0.2.13",
-    "px-code-design": "~0.2.11"
+    "px-code-design": "~0.2.11",
+    "px-headings-design": "^0.2.14",
+    "px-list-inline-design": "^0.2.11"
   }
 }
