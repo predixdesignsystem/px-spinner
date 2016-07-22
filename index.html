@@ -60,7 +60,7 @@
                 <label for$="hide{{indexPlusOne(index)}}" class="toggle__label toggle__label--small"></label>
                 <div class="u-ml-">Hide</div>
               </div>
-              <div class="u-mb-">Size: <input id="size{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="{{item.size}}" value="{{item.size::input}}" /></div>
+              <div class="u-mb-">Size: <input id="size{{indexPlusOne(index)}}" class="text-input" type="number" placeholder="{{item.size}}" value="{{item.size::input}}" /></div>
             </div>
 
             <div class="demoContainer u-mr++">
@@ -121,11 +121,11 @@ window.addEventListener('WebComponentsReady', function() {
       year = new Date(),
       optionsArray = [
     {
-      "size":150,
+      "size":100,
       "finished": false
     },
     {
-      "size":100,
+      "size":75,
       "finished": true
     },
   ];

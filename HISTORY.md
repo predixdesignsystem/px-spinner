@@ -1,3 +1,7 @@
+v0.3.8
+================
+* updated size property to a number input field
+
 v0.3.7
 ================
 * fixed styling and favicon
