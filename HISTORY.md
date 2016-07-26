@@ -1,3 +1,7 @@
+v0.3.8
+================
+* updated script to vulcanize demo page
+
 v0.3.7
 ================
 * added footer to demo page

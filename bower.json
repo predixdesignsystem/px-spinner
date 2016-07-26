@@ -1,6 +1,6 @@
 {
   "name": "px-spinner",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "main": [
     "px-spinner.html"
   ],
@@ -12,7 +12,9 @@
     "bower_components",
     "node_modules",
     "test",
-    "OSS_Notice.pdf"
+    "OSS_Notice.pdf",
+    "scripts",
+    ".github"
   ],
   "dependencies": {
     "polymer": "^1.5.0",
