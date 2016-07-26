@@ -1,6 +1,14 @@
-v0.3.8
+v0.3.9
 ================
 * updated script to vulcanize demo page
+
+v0.3.8
+=======
+* updated size property to a number input field
+
+v0.3.7
+================
+* fixed styling and favicon
 
 v0.3.7
 ================

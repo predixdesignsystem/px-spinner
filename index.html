@@ -11,7 +11,7 @@
   <link rel="import" href="../px-api-viewer/px-api-viewer.html" />
   <link rel="import" href="../px-tabs/px-tab-set.html" />
   <link rel="import" href="px-spinner.html"/>
-  <link rel="icon" href="px-favicon.png" type="image/x-icon"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
   <link rel="import" href="../px-demo-snippet/px-demo-snippet.html">
   <link rel="import" href="../polymer-font-awesome/polymer-font-awesome.html">
   <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
@@ -53,14 +53,14 @@
           <section class="tab-page flex flex--right flex--wrap">
             <div class="mega-demo flex u-pb++">
             <!-- Properties -->
-            <div class="properties u-ph+ u-pb+  u-m++">
+            <div class="properties u-ph+ u-pb+ u-mt++ u-mh++">
               <p class="epsilon">Properties</p>
               <div class="flex u-mb-">
                 <input id="hide{{indexPlusOne(index)}}" class="toggle__input toggle__input--small" type="checkbox" checked="{{item.finished::change}}">
                 <label for$="hide{{indexPlusOne(index)}}" class="toggle__label toggle__label--small"></label>
                 <div class="u-ml-">Hide</div>
               </div>
-              <div class="u-mb-">Size: <input id="size{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="{{item.size}}" value="{{item.size::input}}" /></div>
+              <div class="u-mb-">Size: <input id="size{{indexPlusOne(index)}}" class="text-input" type="number" placeholder="{{item.size}}" value="{{item.size::input}}" /></div>
             </div>
 
             <div class="demoContainer u-mr++">
@@ -121,11 +121,11 @@ window.addEventListener('WebComponentsReady', function() {
       year = new Date(),
       optionsArray = [
     {
-      "size":150,
+      "size":100,
       "finished": false
     },
     {
-      "size":100,
+      "size":75,
       "finished": true
     },
   ];
