@@ -1080,9 +1080,6 @@ textarea {
   background: #f7f7fc;
   width: 100%; }
 
-.hero {
-  max-width: 48.3333333333rem; }
-
 .properties {
   -ms-flex-preferred-size: 16.6666666667rem;
       flex-basis: 16.6666666667rem;

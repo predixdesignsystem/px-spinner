@@ -55,10 +55,6 @@ $inuit-enable-list-inline--delimited : true;
   width: 100%;
 }
 
-.hero{
-  max-width: calculateRem(725px);
-}
-
 .properties{
   flex-basis: calculateRem(250px);
   background: $white;

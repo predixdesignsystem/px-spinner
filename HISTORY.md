@@ -1,3 +1,7 @@
+v0.3.10
+================
+* added image to readme, removed watch, added view on github
+
 v0.3.9
 ================
 * updated script to vulcanize demo page
