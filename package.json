@@ -2,7 +2,7 @@
     "name": "px-spinner",
     "author": "General Electric",
     "description": "A Px component",
-    "version": "0.3.11",
+    "version": "0.3.12",
     "private": true,
     "extName" : null,
     "repository" :

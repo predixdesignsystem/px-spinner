@@ -90,6 +90,7 @@ $inuit-enable-list-inline--delimited : true;
   flex-basis: calculateRem(400px);
   background: $white;
   border: 1px solid $gray4;
+  overflow: auto;
 }
 .componentList {
   a {
