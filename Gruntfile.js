@@ -25,7 +25,11 @@ module.exports = function (grunt) {
                 files: {
                     'css/noprefix/px-spinner-sketch.css': 'sass/px-spinner-sketch.scss',
                     'css/noprefix/px-spinner.css': 'sass/px-spinner-predix.scss',
+                },
+                demo: {
+                  files:{
                     'css/noprefix/px-spinner-demo.css': 'sass/px-spinner-demo.scss'
+                  }
                 }
             }
         },

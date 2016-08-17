@@ -54,7 +54,7 @@
       <px-tab-pages selected="{{selected}}">
         <template is="dom-repeat" items="{{optionsArray}}">
           <section class="tab-page">
-            <div class="mega-demo flex flex--wrap u-ph++ u-pb++">
+            <div class="mega-demo flex u-ph++ u-pb++">
               <!-- Properties -->
               <div class="properties u-ph+ u-pb+ u-mt+">
                 <p class="epsilon">Properties</p>
@@ -69,13 +69,13 @@
               <div class="demoContainer u-mt+">
                 <!-- demo -->
                 <div class="flex flex--col">
-                  <div class="flex__item demo u-p+">
+                  <div class="demo u-p+">
                     <px-spinner
                       size="{{item.size}}"
                       finished="{{item.finished}}">
                     </px-spinner>
                   </div>
-                  <div class="flex__item">
+                  <div>
                     <px-demo-snippet
                       element-properties={{item}}
                       element-name="px-spinner">

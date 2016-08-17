@@ -56,11 +56,9 @@ $inuit-enable-list-inline--delimited : true;
   background: $gray1;
   width: 100%;
 }
-
 .description-text{
   max-width: calculateRem(700px);
 }
-
 .properties{
   flex: 0 0 calculateRem(250px);
   background: $white;
@@ -69,11 +67,10 @@ $inuit-enable-list-inline--delimited : true;
   overflow-y: auto;
   margin-right: calculateRem(20px);
 }
-
 .demoContainer {
   flex: 1 1 auto;
+  overflow: auto;
 }
-
 .demoSnippet {
   flex-basis: calculateRem(150px);
 }
