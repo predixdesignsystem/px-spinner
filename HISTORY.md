@@ -1,3 +1,7 @@
+v0.3.14
+================
+* updated bower to bring in codepen feature.
+
 v0.3.13
 ================
 * added overflow to demoContainer and removed flex__wrap from mega-demo
