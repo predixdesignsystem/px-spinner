@@ -22,9 +22,11 @@ is being done for an indefinite period of time.
 @homepage index.html
 @demo demo.html
 -->
+<link rel="import" href="css/px-spinner-styles.html">
 <dom-module id="px-spinner">
-  <link rel="import" type="css" href="css/px-spinner.css"/>
   <template>
+    <style include="px-spinner-styles"></style>
+    <style include="px-theme-styles"></style>
     <div id="Wrapper" class="spinner"></div>
   </template>
 </dom-module>
