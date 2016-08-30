@@ -1,6 +1,6 @@
 {
   "name": "px-spinner",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": [
     "px-spinner.html"
   ],
@@ -28,7 +28,7 @@
     "px-tables-design": "#~0.3.12",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#~1.2.3",
     "px-polymer-font-awesome":"^0.1.8",
-    "px-tabs": "~0.4.0",
+    "px-tabs": "~0.5.0",
     "px-api-viewer": "~0.1.0",
     "px-demo-snippet": "^0.5.0",
     "px-toggle-design": "^0.2.12",
