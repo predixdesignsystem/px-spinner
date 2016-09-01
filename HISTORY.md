@@ -1,3 +1,15 @@
+v0.4.2
+================
+* fixed demo page for IE
+
+v0.4.1
+================
+* dependency uptick
+
+v0.4.0
+================
+* uprev
+
 v0.3.14
 ================
 * updated bower to bring in codepen feature.
