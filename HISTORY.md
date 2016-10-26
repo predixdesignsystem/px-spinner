@@ -1,3 +1,7 @@
+v0.4.3
+================
+* Updated dependencies
+
 v0.4.2
 ================
 * fixed demo page for IE
