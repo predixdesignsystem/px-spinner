@@ -40,14 +40,17 @@ $inuit-enable-layout--full : true;
   display: block;
 }
 
+$px-spinner-background-color : var(--px-spinner-background-color, $gray4);
+$px-spinner-fill-color : var(--px-spinner-fill-color, $primary-blue);
+
 .spinner {
   font-size: 10px;
   position: relative;
   text-indent: -9999em;
-  border-top: 1.1em solid rgba(rgba(209, 208, 217, 1), 1);
-  border-right: 1.1em solid rgba(rgba(209, 208, 217, 1), 1);
-  border-bottom: 1.1em solid rgba(rgba(209, 208, 217, 1), 1);
-  border-left: 1.1em solid #5082c3;
+  border-top: 1.1em solid $px-spinner-background-color;
+  border-right: 1.1em solid $px-spinner-background-color;
+  border-bottom: 1.1em solid $px-spinner-background-color;
+  border-left: 1.1em solid $px-spinner-fill-color;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);

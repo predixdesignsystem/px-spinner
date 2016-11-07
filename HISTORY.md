@@ -1,3 +1,7 @@
+v0.4.3
+================
+* added style variables for theming
+
 v0.4.2
 ================
 * fixed demo page for IE

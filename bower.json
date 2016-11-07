@@ -1,6 +1,6 @@
 {
   "name": "px-spinner",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "main": [
     "px-spinner.html"
   ],
@@ -32,7 +32,7 @@
     "px-api-viewer": "~0.1.0",
     "px-demo-snippet": "^0.6.4",
     "px-toggle-design": "^0.2.12",
-    "px-actionable-text-icons-design": "^0.0.3",
+    "px-actionable-text-icons-design": "^0.1.0",
     "px-headings-design": "^0.2.13",
     "px-code-design": "~0.2.11",
     "px-headings-design": "^0.2.14",
