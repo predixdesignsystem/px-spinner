@@ -1,13 +1,13 @@
 {
     "name": "px-spinner",
-    "version": "0.4.5",
+    "version": "0.4.6",
     "main": [
         "px-spinner.html"
     ],
     "ignore": [
         ".*",
         "npm-debug.log",
-        "Gruntfile.js",
+        "gulpfile.js",
         "sass",
         "bower_components",
         "node_modules",
