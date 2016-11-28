@@ -1,3 +1,7 @@
+v0.4.10
+==================
+* changed font awesome folder name
+
 v0.4.9
 ==================
 * changing all devDeps to ^
