@@ -1,3 +1,7 @@
+v0.4.11
+==================
+* changing browser in wct testing from safari 8 to safari 10 on elcapitan
+
 v0.4.10
 ==================
 * changed font awesome folder name
