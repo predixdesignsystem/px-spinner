@@ -1,3 +1,7 @@
+v1.0.0
+==================
+* Exclude legacy flexbox from autoprefixer scss => css build
+
 v0.5.3
 ==================
 * Updated to px-demo
