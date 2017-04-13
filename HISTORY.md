@@ -1,3 +1,7 @@
+v2.0.0
+==================
+* updated dependencies for design refresh
+
 v1.0.0
 ==================
 * Exclude legacy flexbox from autoprefixer scss => css build
