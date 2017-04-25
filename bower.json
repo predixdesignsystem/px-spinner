@@ -5,6 +5,7 @@
     "px-spinner.html"
   ],
   "ignore": [
+    "*.enc",
     ".*",
     "node_modules",
     "bower_components",
