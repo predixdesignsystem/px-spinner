@@ -8,18 +8,7 @@
  * under which the software has been supplied.
  */
 
-//
-// Sass for the "sketch" notion of the px-spinner component
-//
-// @author Runn Vermel
-//
-
-/*
-THIS FILE SHOULD CONTAIN ONLY ABSTRACT/'SKETCH' THEME RULES, NOT SPECIFIC TO PREDIX BRANDING
-Predix branding rules go in px-spinner-predix.scss, not in this file.
-*/
-
-
+// Settings
 
 // Generic
 @import "px-normalize-design/_generic.normalize.scss";
@@ -40,22 +29,22 @@ $inuit-enable-layout--full : true;
   display: block;
 }
 
-$px-spinner-background-color : var(--px-spinner-background-color, $gray4);
-$px-spinner-fill-color : var(--px-spinner-fill-color, $primary-blue);
+$px-spinner-background-color : var(--px-spinner-background-color, lightgray);
+$px-spinner-fill-color : var(--px-spinner-fill-color, black);
 
 .spinner {
   font-size: 10px;
   position: relative;
   text-indent: -9999em;
-  border-top: 1.1em solid $px-spinner-background-color;
-  border-right: 1.1em solid $px-spinner-background-color;
-  border-bottom: 1.1em solid $px-spinner-background-color;
-  border-left: 1.1em solid $px-spinner-fill-color;
+  border-top: 5px solid $px-spinner-background-color;
+  border-right: 5px solid $px-spinner-background-color;
+  border-bottom: 5px solid $px-spinner-background-color;
+  border-left: 5px solid $px-spinner-fill-color;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-animation: load8 1.1s infinite linear;
-  animation: load8 1.1s infinite linear;
+  -webkit-animation: load8 1.1s infinite cubic-bezier(.78,.13,.16,.87);
+  animation: load8 1.1s infinite cubic-bezier(.78,.13,.16,.87);
 }
 .spinner,
 .spinner:after {
@@ -88,3 +77,4 @@ $px-spinner-fill-color : var(--px-spinner-fill-color, $primary-blue);
 @import "inuit-clearfix/_trumps.clearfix.scss";
 @import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
 @import "px-widths-responsive-design/_trumps.widths-responsive.scss";
+
