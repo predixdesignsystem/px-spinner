@@ -30,8 +30,8 @@ $inuit-enable-layout--full : true;
   display: block;
 }
 
-$px-spinner-background-color : var(--px-spinner-background-color, $cyan1);
-$px-spinner-fill-color : var(--px-spinner-fill-color, $primary-default);
+$px-spinner-background-color : var(--px-spinner-background-color, lightgray);
+$px-spinner-fill-color : var(--px-spinner-fill-color, black);
 
 .spinner {
   font-size: 10px;
