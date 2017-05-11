@@ -45,8 +45,13 @@ function buildCSS(){
 }
 
 gulp.task('sass', function() {
-  return gulp.src(['./sass/*.scss'])
+  return gulp.src(['./sass/*.scss', '!./sass/*sketch.scss'])
     .pipe(buildCSS())
+    .pipe(gulpif(/.*predix/,
+      $.rename(function(path){
+        path.basename = new RegExp('.+?(?=\-predix)').exec(path.basename)[0];
+      })
+    ))
     .pipe(stylemod({
       moduleId: function(file) {
         return path.basename(file.path, path.extname(file.path)) + '-styles';
