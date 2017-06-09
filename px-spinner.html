@@ -6,7 +6,7 @@
     See https://github.com/jreichenberg/grunt-dep-serve#why-do-we-need-this
 -->
 <link rel="import" href="../polymer/polymer.html"/>
-
+<link rel="import" href="modernizr.html">
 
 <!--
 Px-Spinner is a Predix UI component used to indicate when data is being loaded,
@@ -35,11 +35,15 @@ Custom property | Description | Default
 <dom-module id="px-spinner">
   <template>
     <style include="px-spinner-styles"></style>
-
-    <svg id="wrapper" viewBox="0 0 100 100">
-      <circle class="circle1" cx="50" cy="50" r="45" />
-      <circle class="circle2" cx="50" cy="50" r="45" transform="rotate(-45,50,50)" />
-    </svg>
+    <template is="dom-if" if="{{_animatedSVGSupport}}">
+      <svg style$="width: {{size}}; height: {{size}};" viewBox="0 0 100 100">
+        <circle class="circle1" cx="50" cy="50" r="45" />
+        <circle class="circle2" cx="50" cy="50" r="45" transform="rotate(-45,50,50)" />
+      </svg>
+    </template>
+    <template is="dom-if" if="{{!_animatedSVGSupport}}" restamp="true">
+      <div style$="width: {{size}}; height: {{size}};" class="spinner-container"></div>
+    </template>
 
   </template>
 </dom-module>
@@ -77,9 +81,17 @@ Custom property | Description | Default
               value: 80,
               notify: true,
               observer: '_sizeComponent'
+            },
+            _animatedSVGSupport: {
+              type: Boolean,
+              readonly: true,
+              value: function(){
+                return Modernizr.smil;
+              }
             }
         },
         attached: function() {
+          console.log(this._animatedSVGSupport);
           this._sizeComponent();
         },
         /**
@@ -89,12 +101,12 @@ Custom property | Description | Default
          *@method _sizeComponent
          */
         _sizeComponent: function() {
-          this.$.wrapper.style.width = this.size + 'px';
-          this.$.wrapper.style.height = this.size + 'px';
-
-          // Styling the px-spinner elem so it can be positioned properly
-          this.style.width = this.size + 'px';
-          this.style.height = this.size + 'px';
+          // this.$.wrapper.style.width = this.size + 'px';
+          // this.$.wrapper.style.height = this.size + 'px';
+          //
+          // // Styling the px-spinner elem so it can be positioned properly
+          // this.style.width = this.size + 'px';
+          // this.style.height = this.size + 'px';
         },
         /**
          *
