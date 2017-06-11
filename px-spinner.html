@@ -6,7 +6,7 @@
     See https://github.com/jreichenberg/grunt-dep-serve#why-do-we-need-this
 -->
 <link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="modernizr.html">
+<link rel="import" href="px-modernizr.html">
 
 <!--
 Px-Spinner is a Predix UI component used to indicate when data is being loaded,
@@ -85,7 +85,7 @@ Custom property | Description
               type: Boolean,
               readonly: true,
               value: function(){
-                return Modernizr.smil;
+                return Px.Modernizr.smil;
               }
             }
         },
