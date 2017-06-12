@@ -35,6 +35,7 @@
     "suite": false,
     "test": false,
     "assert": false,
-    "fixture": false    
+    "fixture": false,
+    "flush": false
   }
 }

@@ -81,3 +81,13 @@ describe('Finished property should hide', function() {
     expect(spinnerFixture.classList.contains('hidden')).to.be.true;
   });
 });
+
+describe('Test size API', function(){
+  it('Setting size to 100px should resize px-spinner element', function(){
+    var spinnerFixture = fixture('PxSpinner');
+    spinnerFixture.size = 100;
+    flush(function(){
+      expect(spinnerFixture.style.width).to.equal('100px');
+    });
+  });
+});
