@@ -91,7 +91,7 @@ describe('Test size API', function(){
         expect(Polymer.dom(spinnerFixture.root).querySelector('svg').style.width).to.equal('100px');
         done();
       });
-    } else if(isIE || isEdge){
+    } else if (isIE) {
       flush(function(){
         expect(Polymer.dom(spinnerFixture.root).querySelector('.spinner-container').style.width).to.equal('100px');
         done();
