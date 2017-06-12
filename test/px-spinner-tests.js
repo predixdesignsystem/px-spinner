@@ -86,8 +86,9 @@ describe('Test size API', function(){
   it('Setting size to 100px should resize px-spinner element', function(done){
     var spinnerFixture = fixture('PxSpinner');
     spinnerFixture.size = 100;
-    if(isChrome || isFirefox || isSafari){
+    if(isChrome){
       flush(function(){
+        debugger;
         expect(Polymer.dom(spinnerFixture.root).querySelector('svg').style.width).to.equal('100px');
         done();
       });
