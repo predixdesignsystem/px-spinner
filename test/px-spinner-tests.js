@@ -86,9 +86,16 @@ describe('Test size API', function(){
   it('Setting size to 100px should resize px-spinner element', function(done){
     var spinnerFixture = fixture('PxSpinner');
     spinnerFixture.size = 100;
-    flush(function(){
-      expect(Polymer.dom(spinnerFixture.root).querySelector('svg').style.width).to.equal('100px');
-      done();
-    });
+    if(isChrome || isFirefox || isSafari){
+      flush(function(){
+        expect(Polymer.dom(spinnerFixture.root).querySelector('svg').style.width).to.equal('100px');
+        done();
+      });
+    } else{
+      flush(function(){
+        expect(Polymer.dom(spinnerFixture.root).querySelector('.spinner-container').style.width).to.equal('100px');
+        done();
+      });
+    }
   });
 });
