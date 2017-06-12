@@ -88,11 +88,10 @@ describe('Test size API', function(){
     spinnerFixture.size = 100;
     if(isChrome){
       flush(function(){
-        debugger;
         expect(Polymer.dom(spinnerFixture.root).querySelector('svg').style.width).to.equal('100px');
         done();
       });
-    } else{
+    } else if(isIE || isEdge){
       flush(function(){
         expect(Polymer.dom(spinnerFixture.root).querySelector('.spinner-container').style.width).to.equal('100px');
         done();
