@@ -62,3 +62,22 @@ describe('Px-spinner should correctly detect browser capability and show correct
     }
   });
 });
+
+describe('Finished property should hide', function() {
+  it('finished property should add "hidden" css class to spinner', function() {
+    var spinnerFixture = fixture('PxSpinner');
+    spinnerFixture.finished = true;
+    expect(spinnerFixture.classList.contains('hidden')).to.be.true;
+  });
+  it('show method should remove "hidden" css class', function() {
+    var spinnerFixture = fixture('PxSpinner');
+    spinnerFixture.finished = true;
+    spinnerFixture.show();
+    expect(spinnerFixture.classList.contains('hidden')).to.be.false;
+  });
+  it('hide method should add "hidden" css class', function() {
+    var spinnerFixture = fixture('PxSpinner');
+    spinnerFixture.hide();
+    expect(spinnerFixture.classList.contains('hidden')).to.be.true;
+  });
+});
