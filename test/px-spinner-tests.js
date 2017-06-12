@@ -83,11 +83,12 @@ describe('Finished property should hide', function() {
 });
 
 describe('Test size API', function(){
-  it('Setting size to 100px should resize px-spinner element', function(){
+  it('Setting size to 100px should resize px-spinner element', function(done){
     var spinnerFixture = fixture('PxSpinner');
     spinnerFixture.size = 100;
     flush(function(){
-      expect(spinnerFixture.style.width).to.equal('100px');
+      expect(Polymer.dom(spinnerFixture.root).querySelector('svg').style.width).to.equal('100px');
+      done();
     });
   });
 });
