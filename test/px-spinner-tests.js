@@ -1,3 +1,14 @@
+// Firefox 1.0+
+var isFirefox = typeof InstallTrigger !== 'undefined';
+// Safari 3.0+ "[object HTMLElementConstructor]"
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+// Internet Explorer 6-11
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+// Edge 20+
+var isEdge = !isIE && !!window.StyleMedia;
+// Chrome 1+
+var isChrome = !!window.chrome && !!window.chrome.webstore;
+
 describe('Base Automation Tests for px-spinner', function() {
   it('Polymer should exist', function() {
     expect(Polymer).to.exist;
@@ -27,5 +38,27 @@ describe('Px-spinner should load custom modernizr SMIL feature detections', func
   it('Px.Modernizr SMIL detect should exist', function() {
     expect(window.Px.Modernizr.smil).to.exist;
   });
+});
 
+describe('Px-spinner should correctly detect browser capability and show correct spinner', function() {
+  it('_animatedSVGSupport property should be true on Chrome', function() {
+    if (isChrome){
+      var spinnerFixture = fixture('PxSpinner');
+      expect(spinnerFixture._animatedSVGSupport).to.be.true;
+    }
+  });
+
+  it('_animatedSVGSupport property should be false on IE', function() {
+    if (isIE){
+      var spinnerFixture = fixture('PxSpinner');
+      expect(spinnerFixture._animatedSVGSupport).to.be.false;
+    }
+  });
+
+  it('_animatedSVGSupport property should be false on Edge', function() {
+    if (isEdge){
+      var spinnerFixture = fixture('PxSpinner');
+      expect(spinnerFixture._animatedSVGSupport).to.be.false;
+    }
+  });
 });
