@@ -93,7 +93,8 @@ describe('Test size API', function(){
       });
     } else if (isIE) {
       flush(function(){
-        expect(Polymer.dom(spinnerFixture.root).querySelector('.spinner-container').style.width).to.equal('100px');
+        // 100px - 10px coz border-box shenanigins.
+        expect(getComputedStyle(Polymer.dom(spinnerFixture.root).querySelector('.spinner-container')).width).to.equal('90px');
         done();
       });
     } else {

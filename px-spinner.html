@@ -41,7 +41,7 @@ Custom property | Description
         <circle class="circle2" cx="50" cy="50" r="45" transform="rotate(-45,50,50)" />
       </svg>
     </template>
-    <template is="dom-if" if="{{!_animatedSVGSupport}}" restamp="true">
+    <template is="dom-if" if="{{!_animatedSVGSupport}}">
       <div style$="width: {{size}}; height: {{size}};" class="spinner-container"></div>
     </template>
 
