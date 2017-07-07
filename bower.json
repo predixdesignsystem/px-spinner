@@ -26,7 +26,7 @@
     "px-spinner.png"
   ],
   "dependencies": {
-    "polymer": "^1.6.0",
+    "polymer": "^1.9.0",
     "px-layout-design": "^1.0.0"
   },
   "devDependencies": {
