@@ -1,14 +1,8 @@
-Px-Spinner [![Build Status](https://travis-ci.org/PredixDev/px-spinner.svg?branch=master)](https://travis-ci.org/PredixDev/px-spinner)
------------------------------------------------
-[![px-spinner demo](px-spinner.png?raw=true)](https://github.com/PredixDev/px-spinner)
+# px-spinner [![Build Status](https://travis-ci.org/PredixDev/px-spinner.svg?branch=master)](https://travis-ci.org/PredixDev/px-spinner)
 
 ## Overview
 
-px-spinner is a Predix UI component used to indicate when data is being loaded, a view is changing, or any place a visual indication is needed to show that work is being done for an indefinite period of time.
-
-## documentation
-
-Read the full API and view the demo [here](https://predixdev.github.io/px-spinner).
+Px-spinner is a Predix UI component used to visually indicate that work is being done for an indefinite period of time, e.g. when data is being loaded, or a view is changing.
 
 ## Usage
 
@@ -49,6 +43,10 @@ HIDE the spinner by default when the page loads
 ### Layout
 
 The spinner centers itself vertically and horizontally within it's parent element.
+
+## Documentation
+
+Read the full API and view the demo [here](https://predixdev.github.io/px-spinner).
 
 ## Local Development
 
