@@ -2,7 +2,7 @@
 
 ## Overview
 
-Px-spinner is a Predix UI component used to visually indicate that work is being done for an indefinite period of time, e.g. when data is being loaded, or a view is changing.
+`Px-spinner` is a Predix UI component used to visually indicate that work is being done for an indefinite period of time, e.g. when data is being loaded, or a view is changing.
 
 ## Usage
 
@@ -12,17 +12,17 @@ Px-spinner is a Predix UI component used to visually indicate that work is being
 3. bower
 4. [webcomponents-lite.js polyfill](https://github.com/webcomponents/webcomponentsjs)
 
-Node, npm and bower are necessary to install the component and dependencies. webcomponents.js adds support for web components and custom elements to your application.
+Node, npm, and bower are necessary to install the component and dependencies. webcomponents.js adds support for web components and custom elements to your application.
 
 ### Getting Started
 
-First, install the component via bower on the command line.
+First, install the component via bower on the command line:
 
 ```
 bower install px-spinner --save
 ```
 
-Second, import the component to your application with the following tag in your head.
+Second, import the component in your application with the following tag in your head:
 
 ```
 <link rel="import" href="/bower_components/px-spinner/px-spinner.html"/>
@@ -42,7 +42,7 @@ HIDE the spinner by default when the page loads
 
 ### Layout
 
-The spinner centers itself vertically and horizontally within it's parent element.
+The `px-spinner` centers itself vertically and horizontally within its parent element.
 
 ## Documentation
 
