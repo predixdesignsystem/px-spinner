@@ -33,7 +33,7 @@ Custom property | Description
   <template>
     <style include="px-spinner-styles"></style>
     <template is="dom-if" if="{{_animatedSVGSupport}}">
-      <svg style$="width: {{size}}; height: {{size}};" viewBox="0 0 100 100">
+      <svg width$="{{size}}" height$="{{size}}" viewBox="0 0 100 100">
         <circle class="circle1" cx="50" cy="50" r="45" />
         <circle class="circle2" cx="50" cy="50" r="45" transform="rotate(-45,50,50)" />
       </svg>

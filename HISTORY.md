@@ -1,3 +1,7 @@
+v2.0.1
+==================
+* Fixed svg width and height so FF respects it with viewbox
+
 v2.0.0
 ==================
 * updated dependencies for design refresh
