@@ -83,22 +83,20 @@ describe('Finished property should hide', function() {
 });
 
 describe('Test size API', function(){
-  it('Setting size to 100px should resize px-spinner element', function(done){
+  it('Setting size to 100 should resize px-spinner element', function(done){
     var spinnerFixture = fixture('PxSpinner');
-    spinnerFixture.size = 100;
-    if (isChrome) {
+    spinnerFixture.set('size', 100);
+    if (isIE) {
       flush(function(){
-        expect(Polymer.dom(spinnerFixture.root).querySelector('svg').style.width).to.equal('100px');
-        done();
-      });
-    } else if (isIE) {
-      flush(function(){
-        // 100px - 10px coz border-box shenanigins.
         expect(getComputedStyle(Polymer.dom(spinnerFixture.root).querySelector('.spinner-container')).width).to.equal('90px');
         done();
       });
     } else {
-      //just get us out of here on other browsers.
+      flush(function(){
+        expect(Polymer.dom(spinnerFixture.root).querySelector('svg').attributes.width).to.equal('100');
+        expect(Polymer.dom(spinnerFixture.root).querySelector('svg').attributes.height).to.equal('100');
+        done();
+      });
       done();
     }
   });
