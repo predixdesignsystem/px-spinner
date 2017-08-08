@@ -64,36 +64,11 @@
 
     properties: {
 
-      /**
-       * Note: The actual data/values for `props` are placed in `this.demoProps`
-       * to create a static reference that Polymer shouldn't overwrite.
-       *
-       * On object containing all the properties the user can configure for this
-       * demo. Usually a pretty similar copy of the component's `properties` block
-       * with some additional sugar added to describe what kind of input the
-       * user will be shown and how that input should be configured.
-       *
-       * Note that `value` for each property is the default that will be set
-       * unless a config from `configs` is applied by default.
-       *
-       *
-       * @property demoProps
-       * @type {Object}
-       */
       props: {
         type: Object,
         value: function(){ return this.demoProps; }
       },
 
-      /**
-       * An array of pre-configured `props` that can be used to provide the user
-       * with a set of common examples. These configs will be made available
-       * as a set of tabs the user can click that will automatically change
-       * the `props` to specific values.
-       *
-       * @property demoProps
-       * @type {Array}
-       */
       configs: {
         type: Array,
         value: function(){
@@ -105,17 +80,14 @@
 
             {
               configName: "Hidden",
-              "size":75,
-              "finished": true
+              size: 75,
+              finished: true
             }
           ]
         }
       }
     },
 
-    /**
-     * A reference for `this.props`. Read the documentation there.
-     */
     demoProps: {
       finished: {
         type: Boolean,
@@ -127,7 +99,7 @@
       size: {
         type: String,
         defaultValue: '100',
-        inputType: 'number',
+        inputType: 'text',
         inputPlaceholder: '100'
       }
     },

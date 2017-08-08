@@ -1,3 +1,7 @@
+v2.0.3
+==================
+* fix size behavior in IE
+
 v2.0.2
 ==================
 * runtime theming for demo
