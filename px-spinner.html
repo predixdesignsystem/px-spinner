@@ -1,15 +1,8 @@
-
-<!--
-    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
-    siblings. When this component is run from its own repo (e.g. ui tests, examples), we assume the server is started with
-    'grunt depserve' (or similar server setup) to enable correct finding of bower dependencies for local runs
-    See https://github.com/jreichenberg/grunt-dep-serve#why-do-we-need-this
--->
 <link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="px-modernizr.html">
+<link rel="import" href="px-modernizr.html"/>
+<link rel="import" href="css/px-spinner-styles.html"/>
 
 <!--
-
 ### Usage
 
     <px-spinner size="50" finished></px-spinner>
@@ -18,17 +11,15 @@
 The following custom properties are available for styling:
 
 Custom property | Description
-----------------|-------------
+:----------------|:-------------
 `--px-spinner-fill-color` | Fill color for the spinner
 `--px-spinner-background-color` | Background color for the spinner
-
 
 @element px-spinner
 @blurb Element providing an indication of data or a view loading.
 @homepage index.html
-@demo demo.html
+@demo index.html
 -->
-<link rel="import" href="css/px-spinner-styles.html">
 <dom-module id="px-spinner">
   <template>
     <style include="px-spinner-styles"></style>
