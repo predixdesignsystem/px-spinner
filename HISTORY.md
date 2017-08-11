@@ -1,3 +1,7 @@
+v2.0.4
+==================
+* fix comment for analyzer
+
 v2.0.3
 ==================
 * fix size behavior in IE
