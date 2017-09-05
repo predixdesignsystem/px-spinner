@@ -51,21 +51,15 @@ Custom property | Description
          */
         properties: {
           /**
-           *
            * This attribute hides the spinner
-           *
            */
           finished: {
             type: Boolean,
-            value: false,
-            reflectToAttribute: true,
-            observer: '_finishedChanged'
+            value: false
           },
           /**
-            *
             * The size, in pixels, of the spinner.
             * Refers to the inner dimension of the circle - no units necessary.
-            *
             */
           size: {
             type: Number,
