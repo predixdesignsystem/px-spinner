@@ -1,3 +1,7 @@
+v2.1.0
+==================
+* updated to use dom-if to hide spinner
+
 v2.0.4
 ==================
 * fix comment for analyzer
