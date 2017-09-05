@@ -23,14 +23,17 @@ Custom property | Description
 <dom-module id="px-spinner">
   <template>
     <style include="px-spinner-styles"></style>
-    <template is="dom-if" if="{{_animatedSVGSupport}}">
-      <svg width$="{{size}}" height$="{{size}}" viewBox="0 0 100 100">
-        <circle class="circle1" cx="50" cy="50" r="45" />
-        <circle class="circle2" cx="50" cy="50" r="45" transform="rotate(-45,50,50)" />
-      </svg>
-    </template>
-    <template is="dom-if" if="{{!_animatedSVGSupport}}">
-      <div style$="width: {{size}}px; height: {{size}}px;" class="spinner-container"></div>
+
+    <template is="dom-if" if="{{!finished}}">
+      <template is="dom-if" if="{{_animatedSVGSupport}}">
+        <svg width$="{{size}}" height$="{{size}}" viewBox="0 0 100 100">
+          <circle class="circle1" cx="50" cy="50" r="45" />
+          <circle class="circle2" cx="50" cy="50" r="45" transform="rotate(-45,50,50)" />
+        </svg>
+      </template>
+      <template is="dom-if" if="{{!_animatedSVGSupport}}">
+        <div style$="width: {{size}}px; height: {{size}}px;" class="spinner-container"></div>
+      </template>
     </template>
 
   </template>
@@ -76,34 +79,6 @@ Custom property | Description
                 return Px.Modernizr.smil;
               }
             }
-        },
-        /**
-         *
-         * This method checks whether the finished attribute is true,
-         * and if it is, hides the element. if it's false, it shows it
-         *
-         */
-        _finishedChanged: function(newValue, oldValue) {
-          (this.finished) ? this.hide() : this.show();
-        },
-
-        /**
-         * Shows the spinner
-         *
-         * @method show
-         */
-        show: function() {
-          this.toggleClass('hidden', false);
-        },
-
-        /**
-         * Hides the spinner
-         *
-         * @method hide
-         */
-        hide: function () {
-          this.toggleClass('hidden', true);
         }
-
     });
 </script>

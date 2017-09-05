@@ -9,18 +9,13 @@
  */
 
 // Settings
+@import "px-normalize-design/_generic.normalize-mini.scss";
 
 // Generic
 @import "px-box-sizing-design/_generic.box-sizing.scss";
 @import "px-helpers-design/_generic.helpers.scss";
 
 // Base
-@import "px-flexbox-design/_base.flexbox.scss";
-@import "px-viewport-design/_base.viewport.scss";
-
-$inuit-enable-layout--full : true;
-
-@import "px-layout-design/_objects.layout.scss";
 
 // Component
 
@@ -86,5 +81,3 @@ $px-spinner-fill-color : var(--px-spinner-fill-color, black);
 
 
 // Trumps
-@import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
-@import "px-widths-responsive-design/_trumps.widths-responsive.scss";
