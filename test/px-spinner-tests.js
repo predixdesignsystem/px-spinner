@@ -81,11 +81,19 @@ describe('Finished property should hide', function() {
       done();
     });
   });
-  it('finished true should hide pxSpinner', function(done) {
+  it('hide method should hide pxSpinner', function(done) {
     var spinnerFixture = fixture('PxSpinner');
-    spinnerFixture.finished = true;
+    spinnerFixture.hide();
     flush(function() {
       expect(spinnerFixture.clientHeight).to.equal(0);
+      done();
+    });
+  });
+  it('show method should show pxSpinner', function(done) {
+    var spinnerFixture = fixture('PxSpinner');
+    spinnerFixture.show();
+    flush(function() {
+      expect(spinnerFixture.clientHeight).to.be.closeTo(70,90);
       done();
     });
   });

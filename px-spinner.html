@@ -55,30 +55,47 @@ Custom property | Description
            * This attribute hides the spinner
            *
            */
-            finished: {
-                type: Boolean,
-                value: false,
-                reflectToAttribute: true,
-                observer: '_finishedChanged'
-            },
-            /**
-             *
-             * The size, in pixels, of the spinner.
-             * Refers to the inner dimension of the circle - no units necessary.
-             *
-             */
-            size: {
-              type: Number,
-              value: 80,
-              notify: true
-            },
-            _animatedSVGSupport: {
-              type: Boolean,
-              readonly: true,
-              value: function(){
-                return Px.Modernizr.smil;
-              }
+          finished: {
+            type: Boolean,
+            value: false,
+            reflectToAttribute: true,
+            observer: '_finishedChanged'
+          },
+          /**
+            *
+            * The size, in pixels, of the spinner.
+            * Refers to the inner dimension of the circle - no units necessary.
+            *
+            */
+          size: {
+            type: Number,
+            value: 80,
+            notify: true
+          },
+          _animatedSVGSupport: {
+            type: Boolean,
+            readonly: true,
+            value: function(){
+              return Px.Modernizr.smil;
             }
+          }
+        },
+        /**
+         * Shows the spinner
+         *
+         * @method show
+         */
+        show: function() {
+          this.set('finished', false);
+        },
+
+        /**
+         * Hides the spinner
+         *
+         * @method hide
+         */
+        hide: function () {
+          this.set('finished', true);
         }
     });
 </script>
