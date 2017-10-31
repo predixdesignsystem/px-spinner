@@ -1,3 +1,7 @@
+v2.1.1
+==================
+* add device flags
+
 v2.1.0
 ==================
 * updated to use dom-if to hide spinner
