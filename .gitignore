@@ -1,7 +1,9 @@
 node_modules
 .DS_Store
 temp
-bower_components
+bower_components*
+bower-*.json
+monogram-wdmk.png
 .idea
 reports
 css/noprefix
