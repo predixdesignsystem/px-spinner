@@ -1,14 +1,3 @@
-// Firefox 1.0+
-var isFirefox = typeof InstallTrigger !== 'undefined';
-// Safari 3.0+ "[object HTMLElementConstructor]"
-var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
-// Internet Explorer 6-11
-var isIE = /*@cc_on!@*/false || !!document.documentMode;
-// Edge 20+
-var isEdge = !isIE && !!window.StyleMedia;
-// Chrome 1+
-var isChrome = !!window.chrome && !!window.chrome.webstore;
-
 describe('Base Automation Tests for px-spinner', function() {
   it('Polymer should exist', function() {
     expect(Polymer).to.exist;
@@ -41,6 +30,20 @@ describe('Px-spinner should load custom modernizr SMIL feature detections', func
 });
 
 describe('Px-spinner should correctly detect browser capability and show correct spinner', function() {
+  let isFirefox;
+  let isSafari;
+  let isIE;
+  let isEdge;
+  let isChrome;
+
+  before(()=>{
+    isFirefox = typeof InstallTrigger !== 'undefined';
+    isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+    isIE = /*@cc_on!@*/false || !!document.documentMode;
+    isEdge = !isIE && !!window.StyleMedia;
+    isChrome = !!window.chrome && !!window.chrome.webstore;
+  });
+
   it('_animatedSVGSupport property should be true on Chrome', function() {
     if (isChrome){
       var spinnerFixture = fixture('PxSpinner');
@@ -100,6 +103,20 @@ describe('Finished property should hide', function() {
 });
 
 describe('Test size API', function(){
+  let isFirefox;
+  let isSafari;
+  let isIE;
+  let isEdge;
+  let isChrome;
+
+  before(()=>{
+    isFirefox = typeof InstallTrigger !== 'undefined';
+    isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+    isIE = /*@cc_on!@*/false || !!document.documentMode;
+    isEdge = !isIE && !!window.StyleMedia;
+    isChrome = !!window.chrome && !!window.chrome.webstore;
+  });
+
   it('Setting size to 100 should resize px-spinner element', function(done){
     var spinnerFixture = fixture('PxSpinner');
     spinnerFixture.set('size', 100);
