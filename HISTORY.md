@@ -1,3 +1,7 @@
+v2.2.0
+==================
+* Polymer 1.x/2.x hybrid element support
+
 v2.1.1
 ==================
 * add device flags
