@@ -46,7 +46,7 @@
         "polymer": "^1.9.0"
       },
       "devDependencies": {
-        "web-component-tester": "^4.0.0"
+        "web-component-tester": "^5.0.0"
       },
       "resolutions": {
         "webcomponentsjs": "^0.7.0"
