@@ -1,3 +1,7 @@
+v2.2.1
+==================
+* bower ignore test folder
+
 v2.2.0
 ==================
 * Polymer 1.x/2.x hybrid element support

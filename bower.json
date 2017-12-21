@@ -1,29 +1,28 @@
 {
   "name": "px-spinner",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "main": [
     "px-spinner.html"
   ],
   "ignore": [
     "*.enc",
     ".*",
-    "node_modules",
-    "bower_components",
+    "npm-debug.log",
+    "gulpfile.js",
     "sass",
-    "HISTORY.md",
-    "CONTRIBUTING.md",
+    "bower_components",
+    "node_modules",
+    "test",
     "OSS_Notice.pdf",
     "scripts",
     ".github",
-    ".editorconfig",
-    ".jshintrc",
-    ".gitignore",
+    "px-toggle.png",
     "LICENSE.md",
-    "gulpfile.js",
-    "monogram-wdmk.png",
+    "CONTRIBUTING.md",
+    "HISTORY.md",
     "README.md",
-    "wct.conf.json",
-    "px-spinner.png"
+    ".jshintrc",
+    ".editorconfig"
   ],
   "dependencies": {
     "polymer": "#1.9 - 2",
