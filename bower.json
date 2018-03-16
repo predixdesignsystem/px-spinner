@@ -51,5 +51,6 @@
         "webcomponentsjs": "^0.7.0"
       }
     }
-  }
+  },
+  "license": "BSD-3-Clause"
 }
