@@ -29,5 +29,5 @@
     "yargs": "^6.0.0",
     "polymer-cli": "^1.5.7"
   },
-  "license": "BSD-3-Clause"
+  "license": "Apache-2.0"
 }
