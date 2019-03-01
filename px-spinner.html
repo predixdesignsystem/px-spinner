@@ -82,22 +82,20 @@ Custom property | Description
             value: 80,
             notify: true
           },
+          /**
+           * If set, disables SVG animations on the spinner.
+           * Set this if you need the spinner to continue animating while the event loop is blocked.
+           */
+           disableSvgAnimation: {
+            type: Boolean,
+            value: false,
+          },
           _animatedSVGSupport: {
             type: Boolean,
             readonly: true,
             value: function(){
               return Px.Modernizr.smil;
             }
-          },
-          /**
-           * This property is to control whether the spinner is rendered as svg or div element.
-           * If disableSvgAnimation is false, which is by default value, spinner is rendered as svg,
-           * otherwise the spinner is rendered as div.
-           *
-           */
-          disableSvgAnimation: {
-            type: Boolean,
-            value: false,
           },
         },
         /**
