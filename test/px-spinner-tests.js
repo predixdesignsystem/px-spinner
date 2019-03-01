@@ -120,18 +120,10 @@ describe('Finished property should hide', function() {
 });
 
 describe('Test size API', function(){
-  let isFirefox;
-  let isSafari;
   let isIE;
-  let isEdge;
-  let isChrome;
 
   before(()=>{
-    isFirefox = typeof InstallTrigger !== 'undefined';
-    isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
     isIE = /*@cc_on!@*/false || !!document.documentMode;
-    isEdge = !isIE && !!window.StyleMedia;
-    isChrome = !!window.chrome && !!window.chrome.webstore;
   });
 
   it('Setting size to 100 should resize px-spinner element', function(done){
@@ -148,7 +140,20 @@ describe('Test size API', function(){
         assert(Polymer.dom(spinnerFixture.root).querySelector('svg').attributes.height, '100');
         done();
       });
-      done();
     }
+  });
+});
+
+describe("Test disableSvgAnimation API", function() {
+  it("Set disableSvgAnimation to true to render as div element", function(done) {
+    const spinnerFixture = fixture("PxSpinner");
+    spinnerFixture.set("disableSvgAnimation", true);
+    flush(function() {
+      expect(Polymer.dom(spinnerFixture.root).querySelector("svg")).to.be.null;
+      expect(
+        Polymer.dom(spinnerFixture.root).querySelector(".spinner-container")
+      ).not.be.null;
+      done();
+    });
   });
 });
