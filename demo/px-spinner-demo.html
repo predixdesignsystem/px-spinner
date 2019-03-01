@@ -27,13 +27,13 @@ limitations under the License.
 <link rel="import" href="../../px-demo/px-demo-component-snippet.html" />
 
 <!-- Imports for this component -->
- 
+
 <link rel="import" href="../px-spinner.html" />
 
 <!-- Demo DOM module -->
 <dom-module id="px-spinner-demo">
   <template>
- 
+
 
     <!-- Header -->
     <px-demo-header
@@ -55,7 +55,8 @@ limitations under the License.
       <px-demo-component slot="px-demo-component">
         <px-spinner
           size="{{props.size.value}}"
-          finished="{{props.finished.value}}">
+          finished="{{props.finished.value}}"
+          disable-svg-animation="{{props.disableSvgAnimation.value}}">
         </px-spinner>
       </px-demo-component>
       <!-- END Component ------------------------------------------------------>
@@ -107,13 +108,17 @@ limitations under the License.
     },
 
     demoProps: {
+      disableSvgAnimation: {
+        type: Boolean,
+        defaultValue: false,
+        inputType: 'toggle'
+      },
       finished: {
         type: Boolean,
         inputName: 'Hide',
         defaultValue: false,
         inputType: 'toggle'
       },
-
       size: {
         type: String,
         defaultValue: '100',

@@ -41,13 +41,13 @@ Custom property | Description
     <style include="px-spinner-styles"></style>
 
     <template is="dom-if" if="{{!finished}}">
-      <template is="dom-if" if="{{_animatedSVGSupport}}">
+      <template is="dom-if" if="[[_shouldRenderAsSVG(_animatedSVGSupport, disableSvgAnimation)]]">
         <svg width$="{{size}}" height$="{{size}}" viewBox="0 0 100 100">
           <circle class="circle1" cx="50" cy="50" r="45" />
           <circle class="circle2" cx="50" cy="50" r="45" transform="rotate(-45,50,50)" />
         </svg>
       </template>
-      <template is="dom-if" if="{{!_animatedSVGSupport}}">
+      <template is="dom-if" if="[[!_shouldRenderAsSVG(_animatedSVGSupport, disableSvgAnimation)]]">
         <div style$="width: {{size}}px; height: {{size}}px;" class="spinner-container"></div>
       </template>
     </template>
@@ -82,13 +82,21 @@ Custom property | Description
             value: 80,
             notify: true
           },
+          /**
+           * If set, disables SVG animations on the spinner.
+           * Set this if you need the spinner to continue animating while the event loop is blocked.
+           */
+           disableSvgAnimation: {
+            type: Boolean,
+            value: false,
+          },
           _animatedSVGSupport: {
             type: Boolean,
             readonly: true,
             value: function(){
               return Px.Modernizr.smil;
             }
-          }
+          },
         },
         /**
          * Shows the spinner
@@ -106,6 +114,10 @@ Custom property | Description
          */
         hide: function () {
           this.set('finished', true);
+        },
+
+        _shouldRenderAsSVG(_animatedSVGSupport, disableSvgAnimation) {
+          return _animatedSVGSupport && !disableSvgAnimation;
         }
     });
 </script>
