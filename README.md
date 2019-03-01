@@ -1,4 +1,4 @@
-# px-spinner [![Build Status](https://travis-ci.org/PredixDev/px-spinner.svg?branch=master)](https://travis-ci.org/PredixDev/px-spinner)
+# px-spinner [![Build Status](https://travis-ci.org/predixdesignsystem/px-spinner.svg?branch=master)](https://travis-ci.org/predixdesignsystem/px-spinner)
 
 ## Overview
 
@@ -46,7 +46,7 @@ The `px-spinner` centers itself vertically and horizontally within its parent el
 
 ## Documentation
 
-Read the full API and view the demo [here](https://predixdev.github.io/px-spinner).
+Read the full API and view the demo [here](https://www.predix-ui.com/#/elements/px-spinner).
 
 ## Local Development
 
@@ -77,4 +77,4 @@ Navigate to the root of that server (e.g. http://localhost:8080/) in a browser t
 
 ## Known Issues
 
-Please use [Github Issues](https://github.com/PredixDev/px-spinner/issues) to submit any bugs you might find.
+Please use [Github Issues](https://github.com/predixdesignsystem/px-spinner/issues) to submit any bugs you might find.
